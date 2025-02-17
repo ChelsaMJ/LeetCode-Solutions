@@ -1,6 +1,5 @@
 class Solution {
     public boolean areOccurrencesEqual(String s) {
-        
 
         HashMap<Character, Integer> ch = new HashMap<>();
 
