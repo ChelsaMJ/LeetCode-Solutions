@@ -1,20 +1,21 @@
 class Solution {
     public boolean areOccurrencesEqual(String s) {
-        HashMap<Character, Integer> frequencyMap = new HashMap<>();
         
-        for (char c : s.toCharArray()) {
-            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+
+        HashMap<Character, Integer> ch = new HashMap<>();
+
+        for(char c : s.toCharArray()){
+            ch.put(c, ch.getOrDefault(c,0)+1);
         }
-        
-        Integer firstCount = null;
-        
-        for (int count : frequencyMap.values()) {
-            if (firstCount == null) {
-                firstCount = count;
-            } else if (!firstCount.equals(count)) {
+
+        int count = ch.get(s.charAt(0));
+
+        for(char key : ch.keySet()){
+            if(ch.get(key)!=count){
                 return false;
             }
         }
-        
         return true;
-    }}
+
+    }
+}
